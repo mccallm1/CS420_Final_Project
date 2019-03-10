@@ -1,7 +1,14 @@
-// reading a text file
+//==================================================================
+// File			: main.cpp
+// Author		: Miles McCall, Sultan Alanazi
+// Date			: March 15, 2019
+// Description	: TSP Algorithm
+//==================================================================
+
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <stdlib.h> // exit, EXIT_FAILURE
 using namespace std;
 
 string check_cmd_line(int argc, char** argv) {
