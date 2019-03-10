@@ -25,6 +25,7 @@ int main (int argc, char** argv) {
   for (int i = 0; i < argc; ++i)
         cout << argv[i] << "\n";
   */
+  cout << "start\n";
   string input_file = argv[argc];
   cout << "in:\t" + input_file << "\n";
 
@@ -43,6 +44,6 @@ int main (int argc, char** argv) {
 
   // file output
   gen_output("tsp_example_1.txt");
-
+  cout << "end\n";
   return 0;
 }
