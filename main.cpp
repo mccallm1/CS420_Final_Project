@@ -11,7 +11,7 @@ void gen_output(string in_file) {
 
   // Write to file
   ofstream out_file (out_name);
-  out_file << "~~ test line ~~" << endl
+  out_file << "~~ test line ~~" << endl;
   out_file.close();
 
   return;
