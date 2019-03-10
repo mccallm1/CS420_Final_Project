@@ -11,7 +11,7 @@ void gen_output(string in_file) {
   cout << out_name << "\n";
 
   // Write to file
-  ofstream out_file (out_name);
+  ofstream out_file(out_name.c_str());
   out_file << "~~ test line ~~" << endl;
   out_file.close();
 
