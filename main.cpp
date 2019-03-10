@@ -44,7 +44,7 @@ int main (int argc, char** argv) {
   */
 
   // file output
-  gen_output("tsp_example_1.txt");
+  gen_output(input_file);
   cout << "end \n";
   return 0;
 }
