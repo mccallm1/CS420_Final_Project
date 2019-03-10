@@ -6,7 +6,7 @@ using namespace std;
 
 void gen_output(string in_file) {
   string out_name = "outputs/" + in_file + ".route";
-  ofstream out_file (out_name);
+  ofstream out_file (string(out_name));
 
   if (out_file.is_open()) {
     out_file << "This is a line.\n";
