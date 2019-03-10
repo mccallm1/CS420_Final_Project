@@ -36,7 +36,7 @@ int main (int argc, char** argv) {
     else cout << "Unable to open file";
 
   // file output
-    gen_output("tsp_example_1")
+    gen_output("tsp_example_1");
 
   return 0;
 }
