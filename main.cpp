@@ -20,23 +20,29 @@ void gen_output(string in_file) {
 
 int main (int argc, char** argv) {
   // command line args (input file)
-    cout << "You have entered " << argc << " arguments:" << "\n";
-    for (int i = 0; i < argc; ++i)
-          cout << argv[i] << "\n";
+  /*
+  cout << argc << " arguments:" << "\n";
+  for (int i = 0; i < argc; ++i)
+        cout << argv[i] << "\n";
+  */
+  string input_file = argv[2];
+  cout << "in:\t" + input_file << "\n";
 
   // file input
-    string line;
-    ifstream myfile ("inputs/example.txt");
-    if (myfile.is_open()) {
-      while ( getline (myfile,line) ) {
-        cout << line << '\n';
-      }
-      myfile.close();
+  /*
+  string line;
+  ifstream myfile (input_file);
+  if (myfile.is_open()) {
+    while ( getline (myfile,line) ) {
+      cout << line << '\n';
     }
-    else cout << "Unable to open file";
+    myfile.close();
+  }
+  else cout << "Unable to open file";
+  */
 
   // file output
-    gen_output("tsp_example_1");
+  gen_output("tsp_example_1.txt");
 
   return 0;
 }

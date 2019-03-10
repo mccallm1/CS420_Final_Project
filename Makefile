@@ -1,4 +1,4 @@
-tsp_input:
+tsp:
 	tsp inputs/example.txt
 
 clean:
