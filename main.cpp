@@ -24,7 +24,7 @@ int main (int argc, char** argv) {
     for (int i = 0; i < argc; ++i)
           cout << argv[i] << "\n";
 
-  // file i/o
+  // file input
     string line;
     ifstream myfile ("inputs/example.txt");
     if (myfile.is_open()) {
@@ -34,6 +34,9 @@ int main (int argc, char** argv) {
       myfile.close();
     }
     else cout << "Unable to open file";
+
+  // file output
+    gen_output("tsp_example_1")
 
   return 0;
 }
