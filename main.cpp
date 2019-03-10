@@ -25,7 +25,7 @@ int main (int argc, char** argv) {
   for (int i = 0; i < argc; ++i)
         cout << argv[i] << "\n";
   */
-  string input_file = argv[2];
+  string input_file = argv[argc];
   cout << "in:\t" + input_file << "\n";
 
   // file input
