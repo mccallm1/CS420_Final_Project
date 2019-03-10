@@ -7,5 +7,4 @@ clean:
 
 all:
 	g++ -c main.cpp
-	#g++ -c multiply.cpp
-	g++ -o tsp main.o #multiply.o
+	g++ -o tsp main.o
