@@ -5,14 +5,16 @@
 using namespace std;
 
 void gen_output(string in_file) {
-  string out_name = in_file + ".route";
+  string out_name = "outputs/" + in_file + ".route";
   ofstream out_file (out_name);
-    if (out_file.is_open()) {
-      out_file << "This is a line.\n";
-      out_file << "This is another line.\n";
-      out_file.close();
-    }
-    else cout << "Unable to open file";
+
+  if (out_file.is_open()) {
+    out_file << "This is a line.\n";
+    out_file << "This is another line.\n";
+    out_file.close();
+  }
+  else cout << "Unable to open file";
+
   return;
 }
 
