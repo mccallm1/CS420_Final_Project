@@ -4,7 +4,40 @@
 #include <string>
 using namespace std;
 
+string check_cmd_line(int argc, char** argv) {
+  // The last command line arg will be the input file
+
+  // Error check for input file included in cmd line
+  if (argc < 2) {
+    cout << "Too few command line args present, "
+         << "please include input file name after \'tsp\'\n";
+    exit(-1);
+  }
+
+  // Return the last argument, input file name
+  return argv[argc-1];
+}
+
+void parse_input(string in_file) {
+  cout << "Input file parser...\n";
+  // Vars
+  string line;
+  ifstream file (in_file);
+
+  //Read in file
+  if (file.is_open()) {
+    while ( getline (file,line) ) {
+      cout << line << '\n';
+    }
+    file.close();
+  }
+  else cout << "Unable to open file";
+
+  return;
+}
+
 void gen_output(string in_file) {
+  cout << "Output file writer...\n";
   // Vars
   string out_name;
   out_name = "outputs/" + in_file + ".route";
@@ -12,39 +45,21 @@ void gen_output(string in_file) {
 
   // Write to file
   ofstream out_file(out_name.c_str());
-  out_file << "~~ test line ~~" << endl;
-  out_file.close();
+    out_file << "~~ test line ~~" << endl;
+    out_file.close();
 
   return;
 }
 
 int main (int argc, char** argv) {
-  // command line args (input file)
-  /*
-  cout << argc << " arguments:" << "\n";
-  for (int i = 0; i < argc; ++i)
-        cout << argv[i] << "\n";
-  */
-  cout << "start \n";
+  // Command line args
+  string input_file = check_cmd_line(argc, argv);
 
-  string input_file = argv[argc-1];
-  cout << "in:\t" + input_file << "\n";
-  cout << "after input \n";
   // file input
-  /*
-  string line;
-  ifstream myfile (input_file);
-  if (myfile.is_open()) {
-    while ( getline (myfile,line) ) {
-      cout << line << '\n';
-    }
-    myfile.close();
-  }
-  else cout << "Unable to open file";
-  */
+  parse_input(input_file);
 
   // file output
   gen_output(input_file);
-  cout << "end \n";
+
   return 0;
 }
