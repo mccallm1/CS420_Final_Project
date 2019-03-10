@@ -29,7 +29,7 @@ void parse_input(string in_file) {
   cout << "Input file parser...\n";
   // Vars
   string line;
-  ifstream file (in_file);
+  ifstream file (in_file.c_str());
 
   //Read in file
   if (file.is_open()) {
