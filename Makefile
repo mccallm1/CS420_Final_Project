@@ -1,11 +1,11 @@
-make tsp_input:
+tsp_input:
 	tsp inputs/example.txt
 
-make clean:
+clean:
 	rm -rf *.o
 	rm -rf tsp
 
-make all:
+all:
 	g++ -c main.cpp
 	#g++ -c multiply.cpp
 	g++ -o tsp main.o #multiply.o
