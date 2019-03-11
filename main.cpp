@@ -22,14 +22,12 @@ class TSP_obj {
   int city_count // total nodes
 
   //Default Constructor
-  TSP_obj()
-  {
+  TSP_obj() {
       cout << "Default Constructor called" << endl;
   }
 
   // Member Functions()
-  void printname()
-  {
+  void printname() {
      cout << "Geekname is: " << geekname;
   }
 };
@@ -67,6 +65,8 @@ void parse_input(string in_file, TSP_obj& tsp) {
   if (file.is_open()) {
     while ( getline (file,line) ) {
       cout << line << '\n';
+
+      tsp.push_back(other_numbers);
       count++;
     }
     file.close();
