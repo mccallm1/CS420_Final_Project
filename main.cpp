@@ -98,6 +98,7 @@ void parse_input(string in_file, TSP_obj& tsp) {
   int count = 0;
   string line;
   ifstream file (in_file.c_str());
+  vector<string> values;
 
   //Read in file
   if (file.is_open()) {
@@ -106,7 +107,6 @@ void parse_input(string in_file, TSP_obj& tsp) {
         cout << line << '\n';
 
       // separate string into values
-        vector<string> values;
         boost::split(values, line, boost::is_any_of("\t "));
 
       // append values to city vectors
