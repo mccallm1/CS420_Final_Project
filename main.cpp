@@ -145,7 +145,7 @@ int main (int argc, char** argv) {
     string input_file = check_cmd_line(argc, argv);
 
   // Create TSP objct to collect values
-    TSP_obj tsp = TSP_default();
+    TSP_obj tsp = TSP_obj(); //TSP_default();
 
   // file input
     parse_input(input_file, tsp);
