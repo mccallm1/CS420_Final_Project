@@ -117,7 +117,10 @@ void parse_input(string in_file, TSP_obj& tsp) {
     }
     file.close();
   }
-  else cout << "Unable to open file";
+  else {
+    cout << "Unable to open file";
+    exit(-1);
+  }
 
   // Process values
 
