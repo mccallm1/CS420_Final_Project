@@ -27,8 +27,8 @@ class TSP_obj {
   }
 
   // Member Functions()
-  void printname() {
-     cout << "Geekname is: " << geekname;
+  void print_count() {
+     cout << "total nodes: " << city_count << endl;
   }
 };
 
