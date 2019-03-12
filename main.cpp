@@ -148,12 +148,12 @@ int main (int argc, char** argv) {
     TSP_obj tsp = tsp();
 
   // file input
-    parse_input(input_file, &tsp);
+    parse_input(input_file, tsp);
 
   // verify input
     tsp.print_count();
     tsp.print_cities();
-    
+
   // file output
     //gen_output(input_file);
 
