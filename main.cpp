@@ -98,11 +98,6 @@ class TSP_obj {
             cout << "|" << i << "\t|" << city_x << "\t|" << city_y << "|\n";
           }
         }
-
-        void parse_input(string in_file, TSP_obj& tsp) {
-
-          return;
-        }
 };
 
 
