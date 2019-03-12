@@ -30,8 +30,39 @@ class TSP_obj {
 
   public:
     //Default Constructor
-    TSP_default() {
-        cout << "Default Constructor called" << endl;
+    TSP_obj() {
+      cout << "Default constructor called" << endl;
+    }
+
+    TSP_obj(string in_file) {
+      cout << "Custom constructor called: include input file" << endl;
+      cout << "Parsing input...\n";
+      // Vars
+        string line;
+        ifstream file (in_file.c_str());
+        vector<string> values;
+
+      //Read in file
+        if (file.is_open()) {
+          while ( getline (file,line) ) {
+            // print input
+              cout << line << '\n';
+
+            // separate string into values
+              boost::split(values, line, boost::is_any_of("\t "));
+
+            // append values to city vectors
+              append_city(values[1],values[2]);
+
+            // increment city count
+              inc_city_count();
+          }
+          file.close();
+        }
+        else {
+          cout << "Unable to open input file";
+          exit(-1);
+        }
     }
 
     // Member Functions()
@@ -43,7 +74,6 @@ class TSP_obj {
         void inc_city_count(){
           city_count++;
         }
-
 
         void append_x(int val) {
           city_x.push_back(val);
@@ -68,11 +98,15 @@ class TSP_obj {
             cout << "|" << i << "\t|" << city_x << "\t|" << city_y << "|\n";
           }
         }
+
+        void parse_input(string in_file, TSP_obj& tsp) {
+
+          return;
+        }
 };
 
 
 // Function Creation
-
 string check_cmd_line(int argc, char** argv) {
   // The last command line arg will be the input file
 
@@ -85,47 +119,6 @@ string check_cmd_line(int argc, char** argv) {
 
   // Return the last argument, input file name
   return argv[argc-1];
-}
-
-/* parse_input reads the input file,
-  counts total number of cities,
-  and inputs easy row as a city struct
-
-*/
-void parse_input(string in_file, TSP_obj& tsp) {
-  cout << "Input file parser...\n";
-  // Vars
-  int count = 0;
-  string line;
-  ifstream file (in_file.c_str());
-  vector<string> values;
-
-  //Read in file
-  if (file.is_open()) {
-    while ( getline (file,line) ) {
-      // print input
-        cout << line << '\n';
-
-      // separate string into values
-        boost::split(values, line, boost::is_any_of("\t "));
-
-      // append values to city vectors
-        tsp.append_city(values[1],values[2]);
-
-      // increment city count
-        tsp.inc_city_count();
-    }
-    file.close();
-  }
-  else {
-    cout << "Unable to open file";
-    exit(-1);
-  }
-
-  // Process values
-
-
-  return;
 }
 
 void gen_output(string in_file) {
@@ -148,10 +141,7 @@ int main (int argc, char** argv) {
     string input_file = check_cmd_line(argc, argv);
 
   // Create TSP objct to collect values
-    TSP_obj tsp = TSP_obj(); //TSP_default();
-
-  // file input
-    parse_input(input_file, tsp);
+    TSP_obj tsp = TSP_obj(input_file); //TSP_default();
 
   // verify input
     tsp.print_count();
