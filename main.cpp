@@ -1,6 +1,6 @@
 //==================================================================
 // File			: main.cpp
-// Author		: Miles McCall, Sultan Alanazi
+// Author		: Miles McCall, Sultan Alanazi, Austin Sanders
 // Date			: March 15, 2019
 // Description	: TSP Algorithm
 //==================================================================
@@ -13,23 +13,42 @@ using namespace std;
 
 // Class Creation
 class TSP_obj {
+  private:
+    // Data Members
+    /* One method of storing city coords
+      Struct City {
+        int x, y;
+      };
+      vector <City> cities; // vector containing city structs for each line
+    */
+    vector<int> city_x;
+    vector<int> city_y;
+    int city_count // total nodes
+
   public:
-  // Data Members
-  Struct City {
-    int x, y;
-  };
-  vector <City> cities; // vector containing city structs for each line
-  int city_count // total nodes
+    //Default Constructor
+    TSP_obj() {
+        cout << "Default Constructor called" << endl;
+    }
 
-  //Default Constructor
-  TSP_obj() {
-      cout << "Default Constructor called" << endl;
-  }
+    // Member Functions()
+    void print_count() {
+       cout << "total nodes: " << city_count << endl;
+    }
 
-  // Member Functions()
-  void print_count() {
-     cout << "total nodes: " << city_count << endl;
-  }
+    // Functions to append values to city coord vectors
+    void append_x(int val) {
+      city_x.push_back(val);
+    }
+
+    void append_y(int val) {
+      city_y.push_back(val);
+    }
+
+    void append_city(int val_x, int val_y) {
+      city_x.push_back(val_x);
+      city_y.push_back(val_y);
+    }
 };
 
 
@@ -64,10 +83,17 @@ void parse_input(string in_file, TSP_obj& tsp) {
   //Read in file
   if (file.is_open()) {
     while ( getline (file,line) ) {
+      // print input
       cout << line << '\n';
 
-      tsp.push_back(other_numbers);
-      count++;
+      // separate string into values
+
+
+      // append values to city vectors
+        tsp.push_back(other_numbers);
+
+      // increment city count
+        tsp.count++;
     }
     file.close();
   }
@@ -104,8 +130,9 @@ int main (int argc, char** argv) {
   // file input
   parse_input(input_file, &tsp);
 
+
   // file output
-  gen_output(input_file);
+  //gen_output(input_file);
 
   return 0;
 }
