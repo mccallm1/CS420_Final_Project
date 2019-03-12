@@ -93,7 +93,7 @@ class TSP_obj {
         }
 
         void print_cities() {
-          cout << "|node\t|x\t|y|"
+          cout << "|node\t|x\t|y| \n";
           for (int i = 0; i < city_count; i++) {
             cout << "|" << i << "\t|" << city_x << "\t|" << city_y << "|\n";
           }
