@@ -12,11 +12,15 @@
 // String parsing
 #include <boost/algorithm/string.hpp>
 
+// Local includes
+#include "tsp_obj.h"
+
+
 using namespace std;
 
 // Class Creation
 class TSP_obj {
-  private:
+  public:
     // Data Members
     /* One method of storing city coords
       Struct City {
@@ -28,77 +32,80 @@ class TSP_obj {
     vector<int> city_y;
     int city_count // total nodes
 
-  public:
     //Default Constructor
-    TSP_obj() {
-      cout << "Default constructor called" << endl;
-    }
+      TSP_obj() {
+        cout << "Default constructor called" << endl;
+      }
 
-    TSP_obj(string in_file) {
-      cout << "Custom constructor called: include input file" << endl;
-      cout << "Parsing input...\n";
-      // Vars
-        string line;
-        ifstream file (in_file.c_str());
-        vector<string> values;
+      TSP_obj(string in_file) {
+        cout << "Custom constructor called: include input file" << endl;
+        cout << "Parsing input...\n";
+        // Vars
+          string line;
+          ifstream file (in_file.c_str());
+          vector<string> values;
 
-      //Read in file
-        if (file.is_open()) {
-          while ( getline (file,line) ) {
-            // print input
-              cout << line << '\n';
+        //Read in file
+          if (file.is_open()) {
+            while ( getline (file,line) ) {
+              // print input
+                cout << line << '\n';
 
-            // separate string into values
-              boost::split(values, line, boost::is_any_of("\t "));
+              // separate string into values
+                boost::split(values, line, boost::is_any_of("\t "));
 
-            // append values to city vectors
-              append_city(values[1],values[2]);
+              // append values to city vectors
+                append_city(values[1],values[2]);
 
-            // increment city count
-              inc_city_count();
+              // increment city count
+                inc_city_count();
+            }
+            file.close();
           }
-          file.close();
-        }
-        else {
-          cout << "Unable to open input file";
-          exit(-1);
-        }
-    }
+          else {
+            cout << "Unable to open input file";
+            exit(-1);
+          }
+      }
+
+    //Definition for Destructor
+      ~TSP_obj() { }
 
     // Member Functions()
-      // Gets and Sets
-        void set_city_count(int val){
-          city_count = val;
-        }
+      void set_city_count(int val){
+        city_count = val;
+      }
 
-        void inc_city_count(){
-          city_count++;
-        }
+      void inc_city_count(){
+        city_count++;
+      }
 
-        void append_x(int val) {
-          city_x.push_back(val);
-        }
+      void append_x(int val) {
+        city_x.push_back(val);
+      }
 
-        void append_y(int val) {
-          city_y.push_back(val);
-        }
+      void append_y(int val) {
+        city_y.push_back(val);
+      }
 
-        void append_city(int val_x, int val_y) {
-          city_x.push_back(val_x);
-          city_y.push_back(val_y);
-        }
+      void append_city(int val_x, int val_y) {
+        city_x.push_back(val_x);
+        city_y.push_back(val_y);
+      }
 
-        void print_count() {
-          cout << "total nodes: " << city_count << endl;
-        }
+      void print_count() {
+        cout << "total nodes: " << city_count << endl;
+      }
 
-        void print_cities() {
-          cout << "|node\t|x\t|y| \n";
-          for (int i = 0; i < city_count; i++) {
-            cout << "|" << i << "\t|" << city_x << "\t|" << city_y << "|\n";
-          }
+      void print_cities() {
+        cout << "|node\t|x\t|y| \n";
+        for (int i = 0; i < city_count; i++) {
+          cout << "|" << i << "\t|" << city_x << "\t|" << city_y << "|\n";
         }
+      }
 };
+
+// Class functions
 
 
 // Function Creation
