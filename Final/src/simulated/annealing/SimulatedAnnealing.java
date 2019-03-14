@@ -94,31 +94,58 @@ public class SimulatedAnnealing {
         }
 
         // End timer
-        long endTime = System.currentTimeMillis();
+            long endTime = System.currentTimeMillis();
 
         // Output results to screen
-        System.out.println("Final solution distance: " + best.getTotalDistance());
-        System.out.println("TSP Alg took: " + (endTime - startTime) + " milliseconds");
-        System.out.println("\t" + (endTime - startTime) / 1000 + " seconds");
+            System.out.println("Final solution distance: " + best.getTotalDistance());
+            System.out.println("TSP Alg took: " + (endTime - startTime) + " milliseconds");
+            System.out.println("\t" + (endTime - startTime) / 1000 + " seconds");
 
-        // Output to file
-        String out_file = args[0].concat(".tour");
-        System.out.println("Output file: " + out_file);
+        // File output
+            String out_file = args[0].concat(".tour");
+            System.out.println("Output file: " + out_file);
 
-        try (Writer writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(out_file), "utf-8"))) {
-            // First Line --> Tour length
-            writer.write( String.valueOf(best.getTotalDistance())) ;
+        // Check if output has already been generated
+            File tmpFile = new File(out_file);
 
-            // N lines --> City ID in order of tour
-            for (int z = 0; z < best.tourSize(); z++){
-                City cityname = best.getCity(z);
+        // If file exists: perform comparisons
+            if(tmpFile.exists()) {
+                try (FileReader freader = new FileReader(out_file)) {
+                    // Capture the tour length in saved file in string 'line'
+                    BufferedReader bufferedReader = new BufferedReader(freader);
+                    line = bufferedReader.readLine();
+                    bufferedReader.close();
 
-                System.out.println(cityname.getid());
-                writer.write("\n" + String.valueOf(cityname.getid()) );
+                    // Compare previous tour length: only update if new tour is shorter
+                    if(Integer.valueOf(line) > best.getTotalDistance()) {
+                        // If saved tour is larger, overwrite with new results
+                        try (Writer writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(out_file), "utf-8"))) {
+                            // First Line --> Tour length
+                            writer.write( String.valueOf(best.getTotalDistance())) ;
+                            // N lines --> City ID in order of tour
+                            for (int z = 0; z < best.tourSize(); z++){
+                                City cityname = best.getCity(z);
+                                writer.write("\n" + String.valueOf(cityname.getid()) );
+                            }
+                        } catch (IOException ex) { }
+                    }
+                    else {
+                        // Else the generated tour is already shorter and we do nothing
+                    }
+                } catch (Exception e) { }
             }
-        }
-        catch (IOException ex) {
-            // Handle me
+        // If doesn't exist: write to new file
+        else {
+            try (Writer writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(out_file), "utf-8"))) {
+                // First Line --> Tour length
+                writer.write( String.valueOf(best.getTotalDistance())) ;
+                // N lines --> City ID in order of tour
+                for (int z = 0; z < best.tourSize(); z++){
+                    City cityname = best.getCity(z);
+                    writer.write("\n" + String.valueOf(cityname.getid()) );
+                }
+            } catch (IOException ex) { }
+
         }
     }
 }
