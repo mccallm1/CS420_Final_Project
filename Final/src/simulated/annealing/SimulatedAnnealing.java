@@ -8,10 +8,16 @@ import java.io.FileReader;
 public class SimulatedAnnealing {
 
     public static void main(String[] args) {
+        // Command line args
+        System.out.println("Command line args: ");
+        for(int i=0;i< args.length;i++) {
+            System.out.println(args[i]);
+        }
+
 
         String line;
         //test-input-7,,,,
-        try (FileReader fr = new FileReader("C:\\Users\\alanazsu\\Box Sync\\Graph Theory\\Project\\tsp_example_1.txt")) {
+        try (FileReader fr = new FileReader("/Users/mccallm/Documents/GitHub/CS420_Final_Project/Final/src/simulated/annealing/inputs/test-input-1.txt")) {
             BufferedReader bufferedReader = new BufferedReader(fr);
             while ((line = bufferedReader.readLine()) != null) {
                 int i = 0;
@@ -30,17 +36,20 @@ public class SimulatedAnnealing {
 
         } catch (Exception e) {
         }
+
         //Set initial temp
         double temp = 1000000;
-
         //Cooling rate
         double coolingRate = 0.0000001;
+
+        // Start timing the algorithm
+        long startTime = System.currentTimeMillis();
 
         //create random intial solution
         Tour currentSolution = new Tour();
         currentSolution.tsp(); //generateIndividual();
         
-        System.out.println("Total distance of initial solution: " + currentSolution.getTotalDistance());
+        System.out.println("\nTotal distance of initial solution: " + currentSolution.getTotalDistance());
         System.out.println("Tour: " + currentSolution);
 
         // We would like to keep track if the best solution
@@ -88,6 +97,10 @@ public class SimulatedAnnealing {
         }
 
         System.out.println("Final solution distance: " + best.getTotalDistance());
-        //System.out.println("Tour: " + best);
+
+        long endTime = System.currentTimeMillis();
+        System.out.println("TSP Alg took: " + (endTime - startTime) + " milliseconds");
+        System.out.println("\t" + (endTime - startTime) / 1000 + " seconds");
+
     }
 }
