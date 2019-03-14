@@ -11,13 +11,13 @@ public class SimulatedAnnealing {
         // Command line args
         System.out.println("Command line args: ");
         for(int i=0;i< args.length;i++) {
-            System.out.println(args[i]);
+            System.out.println(i + ": " + args[i]);
         }
-
 
         String line;
         //test-input-7,,,,
-        try (FileReader fr = new FileReader("/Users/mccallm/Documents/GitHub/CS420_Final_Project/Final/src/simulated/annealing/inputs/test-input-1.txt")) {
+        //try (FileReader fr = new FileReader("/Users/mccallm/Documents/GitHub/CS420_Final_Project/Final/src/simulated/annealing/inputs/test-input-1.txt")) {
+        try (FileReader fr = new FileReader(args[0])) {
             BufferedReader bufferedReader = new BufferedReader(fr);
             while ((line = bufferedReader.readLine()) != null) {
                 int i = 0;
@@ -28,8 +28,6 @@ public class SimulatedAnnealing {
                 int y = Integer.valueOf(ss[2+i]);
                 City c = new City(id,x,y);
                 TourManager.addCity(c);
-
-
                 //readingLines.add(line); //4
             }
             bufferedReader.close();
@@ -100,12 +98,18 @@ public class SimulatedAnnealing {
         for (int z = 0; z < best.tourSize(); z++){
             City cityname = best.getCity(z);
             System.out.println(cityname.getid());
-
         }
 
         long endTime = System.currentTimeMillis();
         System.out.println("TSP Alg took: " + (endTime - startTime) + " milliseconds");
         System.out.println("\t" + (endTime - startTime) / 1000 + " seconds");
+
+        // Output to file
+        String out_file = args[0].concat(".tour");
+        PrintWriter writer = new PrintWriter(out_file, "UTF-8");
+        writer.println( String.valueOf(best.getTotalDistance()) );
+        writer.println("The second line");
+        writer.close();
 
     }
 }
