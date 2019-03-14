@@ -94,21 +94,25 @@ public class SimulatedAnnealing {
             temp *= 1 - coolingRate;
         }
 
-        System.out.println("Final solution distance: " + best.getTotalDistance());
-        for (int z = 0; z < best.tourSize(); z++){
-            City cityname = best.getCity(z);
-            System.out.println(cityname.getid());
-        }
-
+        // End timer
         long endTime = System.currentTimeMillis();
+
+        // Output results to screen
+        System.out.println("Final solution distance: " + best.getTotalDistance());
         System.out.println("TSP Alg took: " + (endTime - startTime) + " milliseconds");
         System.out.println("\t" + (endTime - startTime) / 1000 + " seconds");
 
         // Output to file
         String out_file = args[0].concat(".tour");
         PrintWriter writer = new PrintWriter(out_file, "UTF-8");
+
         writer.println( String.valueOf(best.getTotalDistance()) );
-        writer.println("The second line");
+        for (int z = 0; z < best.tourSize(); z++){
+            City cityname = best.getCity(z);
+            System.out.println(cityname.getid());
+            writer.println(cityname.getid());
+        }
+        
         writer.close();
 
     }
