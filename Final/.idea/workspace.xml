@@ -2,23 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c4f96c1e-41c6-4330-a66f-64758f0e2c65" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/simulated/annealing/inputs/test-input-1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/simulated/annealing/inputs/test-input-1.txt.tour" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/simulated/annealing/inputs/test-input-2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/simulated/annealing/inputs/test-input-2.txt.tour" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/simulated/annealing/inputs/test-input-3.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/simulated/annealing/inputs/test-input-3.txt.tour" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/simulated/annealing/inputs/test-input-4.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/simulated/annealing/inputs/test-input-5.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/simulated/annealing/inputs/test-input-6.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/simulated/annealing/inputs/test-input-7.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/simulated/annealing/inputs/tsp_example_1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/simulated/annealing/inputs/tsp_example_1.txt.tour" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/simulated/annealing/inputs/tsp_example_2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/simulated/annealing/inputs/tsp_example_2.txt.tour" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/simulated/annealing/inputs/tsp_example_3.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/simulated/annealing/inputs/tsp_example_3.txt.tour" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/simulated/annealing/SimulatedAnnealing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/simulated/annealing/SimulatedAnnealing.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/simulated/annealing/data/test-input-1.txt.tour" beforeDir="false" afterPath="$PROJECT_DIR$/src/simulated/annealing/data/test-input-1.txt.tour" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -44,8 +29,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/simulated/annealing/SimulatedAnnealing.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="443">
-              <caret line="141" column="23" selection-start-line="141" selection-start-column="23" selection-end-line="141" selection-end-column="23" />
+            <state relative-caret-position="197">
+              <caret line="121" column="97" selection-start-line="121" selection-start-column="97" selection-end-line="121" selection-end-column="97" />
             </state>
           </provider>
         </entry>
@@ -347,8 +332,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/simulated/annealing/SimulatedAnnealing.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="443">
-          <caret line="141" column="23" selection-start-line="141" selection-start-column="23" selection-end-line="141" selection-end-column="23" />
+        <state relative-caret-position="197">
+          <caret line="121" column="97" selection-start-line="121" selection-start-column="97" selection-end-line="121" selection-end-column="97" />
         </state>
       </provider>
     </entry>

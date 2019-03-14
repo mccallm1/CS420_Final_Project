@@ -119,6 +119,7 @@ public class SimulatedAnnealing {
                     // Compare previous tour length: only update if new tour is shorter
                     if(Integer.valueOf(line) > best.getTotalDistance()) {
                         // If saved tour is larger, overwrite with new results
+                        System.out.println("Generated tour is better than saved tour: overwriting with improved result...");
                         try (Writer writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(out_file), "utf-8"))) {
                             // First Line --> Tour length
                             writer.write( String.valueOf(best.getTotalDistance())) ;
@@ -131,11 +132,13 @@ public class SimulatedAnnealing {
                     }
                     else {
                         // Else the generated tour is already shorter and we do nothing
+                        System.out.println("Saved tour is better than generated tour: keeping old file.");
                     }
                 } catch (Exception e) { }
             }
         // If doesn't exist: write to new file
         else {
+            System.out.println("No previous tour exists: saving results to file...");
             try (Writer writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(out_file), "utf-8"))) {
                 // First Line --> Tour length
                 writer.write( String.valueOf(best.getTotalDistance())) ;
@@ -144,8 +147,8 @@ public class SimulatedAnnealing {
                     City cityname = best.getCity(z);
                     writer.write("\n" + String.valueOf(cityname.getid()) );
                 }
-            } catch (IOException ex) { }
-
+            }
+            catch (IOException ex) { }
         }
     }
 }
