@@ -146,7 +146,7 @@ public class SimulatedAnnealing {
                 // N lines --> City ID in order of tour
                 for (int z = 0; z < best.tourSize(); z++){
                     City cityname = best.getCity(z);
-                    writer.write("\n" + String.valueOf(cityname.getid()) );
+                    writer.write(String.valueOf(cityname.getid()) );
                 }
             }
             catch (IOException ex) { }
