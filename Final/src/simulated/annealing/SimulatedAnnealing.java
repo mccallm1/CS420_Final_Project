@@ -107,6 +107,7 @@ public class SimulatedAnnealing {
 
         // Check if output has already been generated
             File tmpFile = new File(out_file);
+            System.out.println("Tour exists: " + tmpFile.exists());
 
         // If file exists: perform comparisons
             if(tmpFile.exists()) {
@@ -119,7 +120,7 @@ public class SimulatedAnnealing {
                     // Compare previous tour length: only update if new tour is shorter
                     if(Integer.valueOf(line) > best.getTotalDistance()) {
                         // If saved tour is larger, overwrite with new results
-                        System.out.println("Generated tour is better than saved tour: overwriting with improved result...");
+                        System.out.println("\tGenerated tour is better than saved tour: overwriting with improved result...");
                         try (Writer writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(out_file), "utf-8"))) {
                             // First Line --> Tour length
                             writer.write( String.valueOf(best.getTotalDistance())) ;
@@ -132,13 +133,13 @@ public class SimulatedAnnealing {
                     }
                     else {
                         // Else the generated tour is already shorter and we do nothing
-                        System.out.println("Saved tour is better than generated tour: keeping old file.");
+                        System.out.println("\tSaved tour is better than generated tour: keeping old file.");
                     }
                 } catch (Exception e) { }
             }
         // If doesn't exist: write to new file
         else {
-            System.out.println("No previous tour exists: saving results to file...");
+            System.out.println("\tNo previous tour exists: saving results to file...");
             try (Writer writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(out_file), "utf-8"))) {
                 // First Line --> Tour length
                 writer.write( String.valueOf(best.getTotalDistance())) ;
