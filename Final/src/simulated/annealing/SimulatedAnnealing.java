@@ -97,6 +97,11 @@ public class SimulatedAnnealing {
         }
 
         System.out.println("Final solution distance: " + best.getTotalDistance());
+        for (int z = 0; z < best.tourSize(); z++){
+            City cityname = best.getCity(z);
+            System.out.println(cityname.getid());
+
+        }
 
         long endTime = System.currentTimeMillis();
         System.out.println("TSP Alg took: " + (endTime - startTime) + " milliseconds");
