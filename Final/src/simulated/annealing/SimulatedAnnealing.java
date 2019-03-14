@@ -1,9 +1,8 @@
 
 package simulated.annealing;
 
+import java.io.*;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
 
 public class SimulatedAnnealing {
 
@@ -104,16 +103,22 @@ public class SimulatedAnnealing {
 
         // Output to file
         String out_file = args[0].concat(".tour");
-        PrintWriter writer = new PrintWriter(out_file, "UTF-8");
+        System.out.println("Output file: " + out_file);
 
-        writer.println( String.valueOf(best.getTotalDistance()) );
-        for (int z = 0; z < best.tourSize(); z++){
-            City cityname = best.getCity(z);
-            System.out.println(cityname.getid());
-            writer.println(cityname.getid());
+        try (Writer writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(out_file), "utf-8"))) {
+            // First Line --> Tour length
+            writer.write( String.valueOf(best.getTotalDistance())) ;
+
+            // N lines --> City ID in order of tour
+            for (int z = 0; z < best.tourSize(); z++){
+                City cityname = best.getCity(z);
+
+                System.out.println(cityname.getid());
+                writer.write("\n" + String.valueOf(cityname.getid()) );
+            }
         }
-        
-        writer.close();
-
+        catch (IOException ex) {
+            // Handle me
+        }
     }
 }
