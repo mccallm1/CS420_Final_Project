@@ -7,9 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c4f96c1e-41c6-4330-a66f-64758f0e2c65" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/test/simulated/annealing/SimulatedAnnealing.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/test/simulated/annealing/SimulatedAnnealing.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/simulated/annealing/SimulatedAnnealing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/simulated/annealing/SimulatedAnnealing.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/simulated/annealing/data/test-input-3.txt.tour" beforeDir="false" afterPath="$PROJECT_DIR$/src/simulated/annealing/data/test-input-3.txt.tour" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -32,7 +30,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/simulated/annealing/SimulatedAnnealing.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="496">
@@ -41,7 +39,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/simulated/annealing/data/test-input-1.txt">
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
@@ -259,6 +257,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49841774" visible="true" weight="0.2746365" />
       <window_info id="Structure" order="1" sideWeight="0.50158226" side_tool="true" weight="0.25" />
@@ -371,18 +370,18 @@
         <state relative-caret-position="-344" />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/simulated/annealing/data/test-input-1.txt.tour">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/simulated/annealing/data/test-input-1.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/simulated/annealing/SimulatedAnnealing.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="496">
           <caret line="148" column="68" selection-start-line="148" selection-start-column="68" selection-end-line="148" selection-end-column="68" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/simulated/annealing/data/test-input-1.txt.tour">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/simulated/annealing/data/test-input-1.txt">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
   <component name="masterDetails">
