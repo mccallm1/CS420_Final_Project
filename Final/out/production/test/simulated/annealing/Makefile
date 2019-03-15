@@ -1,0 +1,2 @@
+all:
+	/Library/Java/JavaVirtualMachines/jdk-10.0.1.jdk/Contents/Home/bin/java "-javaagent:/Applications/IntelliJ IDEA CE.app/Contents/lib/idea_rt.jar=52121:/Applications/IntelliJ IDEA CE.app/Contents/bin" -Dfile.encoding=UTF-8 -classpath /Users/mccallm/Documents/GitHub/CS420_Final_Project/Final/out/production/test simulated.annealing.SimulatedAnnealing /Users/mccallm/Documents/GitHub/CS420_Final_Project/Final/src/simulated/annealing/data/test-input-1.txt
